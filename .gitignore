@@ -1,0 +1,40 @@
+# Unity-specific folders and files to ignore
+/[Ll]ibrary/
+/[Tt]emp/
+/[Oo]bj/
+/[Bb]uild/
+/[Bb]uilds/
+/[Ll]ogs/
+/[Mm]emoryCaptures/
+/[Uu]serData/
+/[Pp]ackages/
+/[Ss]tateCache/
+/[Rr]esources/
+/[Ss]haderCache/
+/[Tt]estResults/
+
+# Visual Studio / MonoDevelop / Rider files
+.vscode/
+.idea/
+*.sln
+*.csproj
+*.suo
+*.sln.docstates
+
+# User-specific files
+*.userprefs
+
+# Ignore all .meta files
+*.meta
+
+# Ignore all .asset files
+*.asset
+
+# Ignore all .unitypackage files
+*.unitypackage
+
+# Ignore specific folders or files (customize this as needed)
+# Folder to ignore
+Assets/FolderToIgnore/
+# File to ignore
+Assets/FileToIgnore.extension

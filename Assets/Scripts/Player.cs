@@ -19,17 +19,20 @@ public class Player : MonoBehaviour
         // float verticalInput = Input.GetAxisRaw("Vertical"); // 세로 방향
         // Vector3 moveTo = new Vector3(horizontalInput, verticalInput, 0f);
         // transform.position += moveTo * moveToSpeed * Time.deltaTime;
-        Debug.Log(Input.mousePosition);
-        Vector3 moveTo = new Vector3(moveToSpeed * Time.deltaTime, 0, 0);
-        if (Input.GetKey(KeyCode.LeftArrow))
-        {
-            transform.position -= moveTo;
-        }
-        else if (Input.GetKey(KeyCode.RightArrow))
-        {
-            transform.position += moveTo;
+        // Debug.Log(Input.mousePosition);
+        // Vector3 moveTo = new Vector3(moveToSpeed * Time.deltaTime, 0, 0);
+        // if (Input.GetKey(KeyCode.LeftArrow))
+        // {
+        //     transform.position -= moveTo;
+        // }
+        // else if (Input.GetKey(KeyCode.RightArrow))
+        // {
+        //     transform.position += moveTo;
+        // }
 
-        }
+        Vector3 mousePos = Camera.main.ScreenToWorldPoint(new Vector3(Input.mousePosition.x, Input.mousePosition.y, Camera.main.nearClipPlane));
+        Debug.Log(mousePos);
+
 
     }
 }

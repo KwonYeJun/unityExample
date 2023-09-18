@@ -10,6 +10,11 @@ public class Weapon : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+     
         transform.position += Vector3.up * moveSpeed * Time.deltaTime;
+    }
+
+    void Start(){
+        Destroy(gameObject, 1f);
     }
 }

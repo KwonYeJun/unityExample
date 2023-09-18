@@ -15,6 +15,9 @@ public class Player : MonoBehaviour
     [SerializeField]
     private Transform shootTransform;
 
+    [SerializeField]
+    private float shootInterval = 0.05f;
+    private float lastShotTime = 0f;
     // Update is called once per frame
     void Update()
     {
@@ -48,8 +51,17 @@ public class Player : MonoBehaviour
     }
     void Shoot()
     {
-        //미사일과 미사일 위치를 import할 수 있게 만들어 주었다.
-        Instantiate(weapon, shootTransform.position, Quaternion.identity);
+
+        // 10 - 0 > 0.05
+        //lastShootTime = 10;
+        
+        if (Time.time - lastShotTime > shootInterval)
+        {
+            //미사일과 미사일 위치를 import할 수 있게 만들어 주었다.
+            Instantiate(weapon, shootTransform.position, Quaternion.identity);
+            lastShotTime = Time.time
+        }
+
 
 
     }

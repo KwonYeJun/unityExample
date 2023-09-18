@@ -40,7 +40,7 @@ public class Player : MonoBehaviour
         // Debug.Log(mousePos);
         // value값이 최솟값, 최대값 보다 크거나 작으면 최대 , 최솟값으로 하고 사이의 값이면 그대로 사용한다.
         // float toY = Mathf.Clamp(mousePos.x, -4.44f, 4.45f);
-        float toX = Mathf.Clamp(mousePos.y, -2.35f, 2.35f);
+        float toX = Mathf.Clamp(mousePos.x, -2.35f, 2.35f);
 
         //마우스로 캐릭터 이동이 가능하게 작성
         transform.position = new Vector3(toX, transform.position.y, transform.position.z);
@@ -54,12 +54,12 @@ public class Player : MonoBehaviour
 
         // 10 - 0 > 0.05
         //lastShootTime = 10;
-        
+
         if (Time.time - lastShotTime > shootInterval)
         {
             //미사일과 미사일 위치를 import할 수 있게 만들어 주었다.
             Instantiate(weapon, shootTransform.position, Quaternion.identity);
-            lastShotTime = Time.time
+            lastShotTime = Time.time;
         }
 
 

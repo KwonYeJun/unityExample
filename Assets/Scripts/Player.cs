@@ -33,11 +33,11 @@ public class Player : MonoBehaviour
         Vector3 mousePos = Camera.main.ScreenToWorldPoint(new Vector3(Input.mousePosition.x, Input.mousePosition.y, Camera.main.nearClipPlane));
         // Debug.Log(mousePos);
         // value값이 최솟값, 최대값 보다 크거나 작으면 최대 , 최솟값으로 하고 사이의 값이면 그대로 사용한다.
-        float toY = Mathf.Clamp(mousePos.x, -4.44f, 4.45f);
+        // float toY = Mathf.Clamp(mousePos.x, -4.44f, 4.45f);
         float toX = Mathf.Clamp(mousePos.y, -2.35f, 2.35f);
 
         //마우스로 캐릭터 이동이 가능하게 작성
-        transform.position = new Vector3(toX,toY, transform.position.z);
+        transform.position = new Vector3(toX,transform.position.y, transform.position.z);
 
 
 

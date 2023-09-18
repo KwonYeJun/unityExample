@@ -4,15 +4,12 @@ using UnityEngine;
 
 public class Weapon : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
-
+    //public를 하게 되면 그냥 사용이 가능하다.
+    [SerializeField]
+    private float moveSpeed = 20;
     // Update is called once per frame
     void Update()
     {
-        
+        transform.position += Vector3.up * moveSpeed * Time.deltaTime;
     }
 }

@@ -8,9 +8,12 @@ public class Player : MonoBehaviour
     // 인스펙터에 노출시켜 직접 설정을 해줄수 있게 할 수 있다.
     [SerializeField]
     private float moveToSpeed;
-    [SerializeField]
 
-    private float TestFloat;
+    [SerializeField]
+    private GameObject weapon;
+
+    [SerializeField]
+    private Transform shootTransform;
 
     // Update is called once per frame
     void Update()
@@ -37,9 +40,18 @@ public class Player : MonoBehaviour
         float toX = Mathf.Clamp(mousePos.y, -2.35f, 2.35f);
 
         //마우스로 캐릭터 이동이 가능하게 작성
-        transform.position = new Vector3(toX,transform.position.y, transform.position.z);
+        transform.position = new Vector3(toX, transform.position.y, transform.position.z);
 
+        Shoot();
 
 
     }
+    void Shoot()
+    {
+        //미사일과 미사일 위치를 import할 수 있게 만들어 주었다.
+        Instantiate(weapon, shootTransform.position, Quaternion.identity);
+
+
+    }
+
 }

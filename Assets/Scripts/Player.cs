@@ -31,8 +31,9 @@ public class Player : MonoBehaviour
         // }
 
         Vector3 mousePos = Camera.main.ScreenToWorldPoint(new Vector3(Input.mousePosition.x, Input.mousePosition.y, Camera.main.nearClipPlane));
-        Debug.Log(mousePos);
-
+        // Debug.Log(mousePos);
+        //마우스로 캐릭터 이동이 가능하게 작성
+        transform.position = new Vector3(mousePos.x, mousePos.y, transform.position.z);
 
     }
 }
